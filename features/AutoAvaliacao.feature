@@ -30,4 +30,10 @@ Scenario: No discrepancies shown
     And no student has more than “25%” on “discrepancie”
     When I look for the student’s list
     Then the list shown is empty
+Scenario: One discrepancie shown
+    Given that I’m on the “Discrepant self-evaluations” screen
+    And the student “Adilson Angelo” is the only student with more than “25%” on “discrepancie”
+    When I look for the student’s list
+    Then the list shows the student “Adilson Angelo”
+	And his percentage of “27%”
 
