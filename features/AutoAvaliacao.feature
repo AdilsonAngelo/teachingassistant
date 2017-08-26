@@ -25,4 +25,4 @@ Scenario: student self-evaluation incomplete GUI
     When “Adilson Angelo” tries to submit the “self-evaluation” form
     Then the system shows an error message
     And asks to fill the “self-evaluation” form again
-
+	And closes the "self-evaluation" screen
