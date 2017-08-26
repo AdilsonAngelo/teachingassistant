@@ -25,4 +25,9 @@ Scenario: student self-evaluation incomplete GUI
     When “Adilson Angelo” tries to submit the “self-evaluation” form
     Then the system shows an error message
     And asks to fill the “self-evaluation” form again
+Scenario: No discrepancies shown
+    Given that I’m on the “Discrepant self-evaluations” screen
+    And no student has more than “25%” on “discrepancie”
+    When I look for the student’s list
+    Then the list shown is empty
 
