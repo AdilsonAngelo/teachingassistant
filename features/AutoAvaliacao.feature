@@ -26,3 +26,14 @@ Scenario: student self-evaluation incomplete GUI
     Then the system shows an error message
     And asks to fill the “self-evaluation” form again
 	And closes the "self-evaluation" screen
+Scenario: No discrepancies shown
+    Given that I’m on the “Discrepant self-evaluations” screen
+    And no student has more than “25%” on “discrepancie”
+    When I look for the student’s list
+    Then the list shown is empty
+Scenario: One discrepancie shown
+    Given that I’m on the “Discrepant self-evaluations” screen
+    And the student “Adilson Angelo” is the only student with more than “25%” on “discrepancie”
+    When I look for the student’s list
+    Then the list shows the student “Adilson Angelo”
+	And his percentage of “27%”
