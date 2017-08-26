@@ -36,4 +36,4 @@ Scenario: One discrepancie shown
     And the student “Adilson Angelo” is the only student with more than “25%” on “discrepancie”
     When I look for the student’s list
     Then the list shows the student “Adilson Angelo”
-	And his percentage of “27%”
+	And his percentage of “29%”
